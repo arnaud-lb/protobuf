@@ -5,21 +5,13 @@ set configuration=Release
 set BUILD_DLL=ON
 set UNICODE=ON
 
-:: Build and run C++ tests
-echo Building C++
-pwd
-dir
-:: Change to the top-level directory of the Git repo
-cd github
-dir
-cd protobuf
+echo Building protoc
+cd github\protobuf
 mkdir build_msvc
 cd build_msvc
 cmake -G "%generator%" -Dprotobuf_BUILD_TESTS=OFF -Dprotobuf_BUILD_SHARED_LIBS=%BUILD_DLL% -Dprotobuf_UNICODE=%UNICODE% ../cmake
 msbuild protobuf.sln /p:Platform=%vcplatform% || goto error
-dir
 cd %configuration%
-dir
 goto :EOF
 
 :error
