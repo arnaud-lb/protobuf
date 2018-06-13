@@ -1,3 +1,4 @@
+set PATH=C:\Program Files (x86)\MSBuild\14.0\bin\;%PATH%
 set generator=Visual Studio 14 Win64
 set vcplatform=x64
 set configuration=Release
