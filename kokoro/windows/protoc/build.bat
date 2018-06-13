@@ -8,11 +8,17 @@ set UNICODE=ON
 echo Building C++
 pwd
 dir
+:: Change to the top-level directory of the Git repo
+cd github
+dir
+cd protobuf
 mkdir build_msvc
 cd build_msvc
 cmake -G "%generator%" -Dprotobuf_BUILD_SHARED_LIBS=%BUILD_DLL% -Dprotobuf_UNICODE=%UNICODE% ../cmake
 msbuild protobuf.sln /p:Platform=%vcplatform% || goto error
+dir
 cd %configuration%
+dir
 goto :EOF
 
 :error
