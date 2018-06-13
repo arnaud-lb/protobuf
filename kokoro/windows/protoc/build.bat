@@ -6,6 +6,8 @@ set UNICODE=ON
 
 :: Build and run C++ tests
 echo Building C++
+pwd
+dir
 mkdir build_msvc
 cd build_msvc
 cmake -G "%generator%" -Dprotobuf_BUILD_SHARED_LIBS=%BUILD_DLL% -Dprotobuf_UNICODE=%UNICODE% ../cmake
