@@ -1107,6 +1107,9 @@ class Message
                         throw new \Exception(
                             "Map value field element cannot be null.");
                     }
+                    if (is_int($tmp_key) && $key_field->getType() === GPBType::STRING) {
+                        $tmp_key = (string) $tmp_key;
+                    }
                     $proto_key = $this->convertJsonValueToProtoValue(
                         $tmp_key,
                         $key_field,
